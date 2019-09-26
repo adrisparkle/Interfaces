@@ -36,7 +36,7 @@ Vue.use(VueWorker)
 locale.use(lang)
 
 // Dev server
-// axios.defaults.baseURL = 'http://172.16.0.187:8001/api'
+/* axios.defaults.baseURL = 'http://192.168.137.112:8001/api' */
 
 // Production server
 axios.defaults.baseURL = 'http://192.168.18.75:8002/api'

@@ -1,5 +1,6 @@
 <template>
   <div class="container col-md-12">
+    <!--
     <nav class="navbar navbar-default" style="margin-top: -30px; margin-bottom: 60px">
       <div class="container-fluid" >
         <ul class="nav navbar-nav" style="height: 50px">
@@ -54,11 +55,12 @@
       </div>
 
     </nav>
-
+-->
 
     <template v-if="action==='SEARCH'">
-      <h2 style="text-align: center;">Consultas Personal Activo</h2>
+      <h2 style="text-align: center;">Búsqueda de solicitudes de compra</h2>
     </template>
+    <!--
     <template v-if="action==='ALTAINDIVIDUAL'">
       <h2 style="text-align: center;">Alta Individual</h2>
     </template>
@@ -82,16 +84,16 @@
       <h2 style="text-align: center;">Baja Individual</h2>
     </template>
 
-    <!-- ++++++++++++++++++++++++++++++++     BAJAGRUPAL     +++++++++++++++++++++++++++++++++++++++++-->
+
     <template v-if="actions==='BAJAGRUPAL'">
       <h2 style="text-align: center;">Bajas Pendientes</h2>
     </template>
-
+-->
 
     <template v-if="!insearch">
       <div class="form-group">
 
-        <div style="text-align: center" ><h3>Buscar Persona <small> [Puede buscar por nombre, carnet, CUNI, Etc.]</small></h3></div>
+        <div style="text-align: center" ><h3>Buscar solicitud <small> [Puede buscar por item, solicitante, regional, etc.]</small></h3></div>
         <br/>
         <br/>
         <br/>
@@ -197,7 +199,7 @@
         showMenuMod: false,
         action: 'SEARCH',
         query: '',
-        // data table
+        // data table aqui se cambian los nombres de tabla amiga
         i: null,
         actions: 'LIST',
         url: '/Contract/',
@@ -205,18 +207,18 @@
         tableColumns: [
           {
             prop: 'CUNI',
-            label: 'CUNI',
-            minWidth: 120
-          },
-          {
-            prop: 'Document',
-            label: 'Documento',
+            label: 'N° documento',
             minWidth: 100
           },
           {
-            prop: 'FullName',
-            label: 'Nombre Completo',
+            prop: 'Document',
+            label: 'Solicitante',
             minWidth: 250
+          },
+          {
+            prop: 'FullName',
+            label: 'Fecha de documento',
+            minWidth: 100
           },
           /* {
             prop: 'DependencyCod',
@@ -225,23 +227,13 @@
           }, */
           {
             prop: 'Positions',
-            label: 'Cargo',
-            minWidth: 150
+            label: 'Serie',
+            minWidth: 120
           },
           {
             prop: 'Linkage',
-            label: 'Vinculacion',
-            minWidth: 100
-          },
-          {
-            prop: 'Dependency',
-            label: 'Dependencia',
-            minWidth: 250
-          },
-          {
-            prop: 'Branches',
-            label: 'Regional',
-            minWidth: 80
+            label: 'Unidad organizacional',
+            minWidth: 200
           }
         ],
         pagination: {

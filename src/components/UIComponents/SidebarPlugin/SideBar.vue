@@ -2,24 +2,19 @@
   <div :class="sidebarClasses"
        :data-background-color="backgroundColor"
        :data-active-color="activeColor">
-    <div class="logo">
-      <a class="simple-text logo-mini"
-         href="#">
+      <div class="logo">
+        <a class="simple-text logo-mini">
           <div class="logo-img">
-              <img class="logo-ucb" :src="logo" alt="">
+            <img class="logo-ucb" :src="logo" alt="">
           </div>
-      </a>
-      <a class="simple-text logo-normal"
-         href="#">
-          <img class="logo-titulo" :src="title" alt="">
-      </a>
-    </div>
+        </a>
+      </div>
     <div class="sidebar-wrapper" ref="sidebarScrollArea">
       <slot>
-
       </slot>
       <ul :class="navClasses">
         <slot name="links">
+          
           <sidebar-item v-for="(link, index) in sidebarLinks"
                         :key="link.name + index"
                         :link="link">
@@ -50,7 +45,7 @@
       },
       backgroundColor: {
         type: String,
-        default: 'darkblue',
+        default: 'white',
         validator: (value) => {
           let acceptedValues = ['white', 'brown', 'black', 'darkblue']
           return acceptedValues.indexOf(value) !== -1
@@ -58,15 +53,15 @@
       },
       activeColor: {
         type: String,
-        default: 'warning',
+        default: 'darkblue',
         validator: (value) => {
-          let acceptedValues = ['primary', 'info', 'success', 'warning', 'danger']
+          let acceptedValues = ['primary', 'info', 'success', 'warning', 'danger', 'darkblue']
           return acceptedValues.indexOf(value) !== -1
         }
       },
       logo: {
         type: String,
-        default: 'static/img/logo_ucb3.png'
+        default: 'static/img/colores-horizontal-LP.jpg'
       },
       sidebarLinks: {
         type: Array,
@@ -118,17 +113,17 @@
     background: transparent!important;
   }
   .logo{
-    padding: 7px 0px;
-  }
-  .logo-titulo{
-    padding-top: 4px;
-    margin-left: 10px;
-    width: 120px;
+    padding: 0px 0px;
   }
   .logo-ucb{
-    width: 45px!important;
+    width: 230px;
+    align-self: center;
+    align-content: center;
   }
   .sidebar .logo .logo-img img, .off-canvas-sidebar .logo .logo-img img {
-    max-width: 45px;
+    max-width: 500px;
+  }
+  .color-user{
+    color: #0000ff;
   }
 </style>

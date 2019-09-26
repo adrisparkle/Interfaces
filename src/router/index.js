@@ -80,11 +80,6 @@ let Menu = {
       component: Module
     },
     {
-      path: 'persona/',
-      name: 'Historial Empleados',
-      component: Employee
-    },
-    {
       path: 'regional/',
       name: 'Regionales',
       component: Branches
@@ -103,11 +98,6 @@ let Menu = {
       path: 'usuario/',
       name: 'Usuarios',
       component: Users
-    },
-    {
-      path: 'distribution/',
-      name: 'Distribución por Centros de Responsabilidad',
-      component: Dist
     },
     {
       path: 'nivel/',
@@ -135,11 +125,6 @@ let Menu = {
       component: OrganizationalUnit
     },
     {
-      path: 'grupocontable/',
-      name: 'Grupo Contable',
-      component: GrupoContable
-    },
-    {
       path: 'profile/',
       name: 'User Page',
       component: UserProfile
@@ -165,43 +150,13 @@ let Menu = {
       component: B1UnidadOrganizacional
     },
     {
-      path: '/B1PEI',
-      name: 'PEI',
-      component: B1PEI
-    },
-    {
-      path: '/B1PlanEstudios',
-      name: 'Programa Academico',
-      component: B1PlanEstudios
-    },
-    {
-      path: '/B1Paralelo',
-      name: 'Paralelos',
-      component: B1Paralelo
-    },
-    {
-      path: '/B1Periodo',
-      name: 'Periodos',
-      component: B1Periodo
-    },
-    {
-      path: '/B1Proyecto',
-      name: 'Proyectos',
-      component: B1Proyecto
-    },
-    {
-      path: '/B1BP',
-      name: 'Socios de Negocio',
-      component: B1BP
-    },
-    {
       path: '/B1People',
       name: 'Personas SAP',
       component: B1employees
     },
     {
       path: '/instancia',
-      name: 'Acciones de Personal',
+      name: 'Solicitudes de compra',
       component: Contractlist
     },
     {
