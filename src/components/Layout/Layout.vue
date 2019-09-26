@@ -3,7 +3,15 @@
     <loading :active.sync="this.$store.state.crud.isLoading"
              :can-cancel="false"
              :is-full-page="true"></loading>
-    <side-bar type="sidebar" :sidebar-links="sidebarLinks">
+
+    <side-bar type="sidebar">
+      <div class="logo">
+        <a class="simple-text logo-mini">
+          <div class="logo-img">
+            <img class="logo-ucb" :src="logo" alt="">
+          </div>
+        </a>
+      </div>
       <user-menu></user-menu>
       <form class="navbar-form navbar-left navbar-search-form navbar-search-form-mobile" role="search">
         <div class="input-group">
@@ -12,12 +20,12 @@
         </div>
       </form>
       <mobile-menu></mobile-menu>
-    </side-bar>
+   </side-bar>
 
     <div class="main-panel">
       <top-navbar></top-navbar>
 
-      <dashboard-content @click.native="toggleSidebar">
+      <dashboard-content>
 
       </dashboard-content>
 
@@ -41,8 +49,8 @@
   // Import stylesheet
   import 'vue-loading-overlay/dist/vue-loading.min.css'
   // Using axios for the example only
-  import SideBar from '../UIComponents/SidebarPlugin'
-  Vue.use(SideBar)
+  /* import SideBar from '../UIComponents/SidebarPlugin'
+  Vue.use(SideBar) */
 
   export default {
     components: {
@@ -50,40 +58,7 @@
       ContentFooter,
       DashboardContent,
       UserMenu,
-      MobileMenu,
       Loading
-    },
-    data () {
-      return {
-        sidebarLinks: []
-      }
-    },
-    methods: {
-      toggleSidebar () {
-        if (this.$sidebar.showSidebar) {
-          this.$sidebar.displaySidebar(false)
-        }
-      }
-    },
-    mounted () {
-      this.$store.dispatch('auth/reload')
-      if (localStorage.getItem('Menu') == null) {
-        axios.get('/auth/getmenu', {
-          headers: {
-            'token': localStorage.getItem('token'),
-            'id': localStorage.getItem('userId')
-          }
-        })
-          .then(response => {
-            console.log(response.data)
-            this.sidebarLinks = response.data
-          })
-          .catch(function (error) {
-            console.log(error)
-          })
-      } else {
-        this.sidebarLinks = JSON.parse(localStorage.getItem('Menu'))
-      }
     }
   }
 
