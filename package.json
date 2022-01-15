@@ -84,7 +84,7 @@
     "karma-spec-reporter": "0.0.31",
     "karma-webpack": "^2.0.2",
     "lolex": "^1.5.2",
-    "marked": "^0.3.6",
+    "marked": "^4.0.10",
     "mocha": "^5.2.0",
     "nightwatch": "^1.0.6",
     "node-sass": "^4.9",
